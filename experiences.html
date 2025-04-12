@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EcoTraveler | Experiences</title>
+  <link rel="stylesheet" href="css/experiences.css" />
+  <style>
+    .weather-section {
+      margin: 2rem auto;
+      text-align: center;
+      background-color: #eaf6ec;
+      padding: 1rem;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      max-width: 600px;
+    }
+
+    .weather-info {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 1.1rem;
+      margin-top: 0.5rem;
+    }
+
+    .weather-info img {
+      width: 48px;
+      height: 48px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>EcoTraveler</h1>
+    <nav>
+      <button id="menu-toggle" aria-label="Toggle menu">☰</button>
+      <ul id="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="itinerary.html">Itinerary</a></li>
+        <li><a href="map.html">Map</a></li>
+        <li><a href="accommodations.html">Accommodations</a></li>
+        <li><a href="experiences.html">Experiences</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="intro">
+      <h2>Unique Eco Experiences</h2>
+      <p>Explore sustainable tours, cultural activities, and adventures that connect you with local communities and nature.</p>
+    </section>
+
+   
+    <select id="experience-filter">
+      <option value="all">All</option>
+      <option value="adventure">Adventure</option>
+      <option value="gastronomy">Gastronomy</option>
+      <option value="cultural">Cultural</option>
+    </select>
+
+    <!-- EXPERIÊNCIAS -->
+    <section id="experiences-list" class="experience-grid">
+      <div class="experience-card" data-category="adventure">
+        <img src="assets/images/experience1.jpg" alt="Rainforest Guided Tour" loading="lazy">
+        <h3>Rainforest Guided Tour</h3>
+        <p>Join local experts on an educational walk through preserved rainforest trails. Learn about native flora and fauna and how to protect them.</p>
+      </div>
+    
+      <div class="experience-card" data-category="gastronomy">
+        <img src="assets/images/experience2.jpg" alt="Organic Farming Workshop" loading="lazy">
+        <h3>Organic Farming Workshop</h3>
+        <p>Experience life on a sustainable eco-farm. Get involved in planting, composting, and preparing organic meals from harvested ingredients.</p>
+      </div>
+    
+      <div class="experience-card" data-category="cultural">
+        <img src="assets/images/experience3.jpg" alt="Eco-Kayaking Adventure" loading="lazy">
+        <h3>Eco-Kayaking Adventure</h3>
+        <p>Paddle through protected coastal waters while spotting wildlife and learning about conservation efforts to preserve marine ecosystems.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; <span id="year"></span> <strong>EcoTraveler</strong>. All rights reserved.</p>
+    <div class="footer-links">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="itinerary.html">Itinerary</a></li>
+        <li><a href="map.html">Map</a></li>
+        <li><a href="accommodations.html">Accommodations</a></li>
+        <li><a href="experiences.html">Experiences</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script>
+    
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Menu hambúrguer
+    const toggleButton = document.getElementById("menu-toggle");
+    const navMenu = document.getElementById("nav-menu");
+
+    toggleButton.addEventListener("click", () => {
+      navMenu.classList.toggle("open");
+    });
+
+    
+    document.addEventListener("DOMContentLoaded", function () {
+      const filterSelect = document.getElementById("experience-filter");
+      const cards = document.querySelectorAll(".experience-card");
+
+      filterSelect.addEventListener("change", function () {
+        const selected = this.value;
+
+        cards.forEach((card) => {
+          const category = card.dataset.category;
+
+          if (selected === "all" || category === selected) {
+            card.style.display = "flex";
+          } else {
+            card.style.display = "none";
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>

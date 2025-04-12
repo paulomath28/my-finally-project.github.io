@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EcoTraveler Map</title>
+  <link rel="stylesheet" href="css/map.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnH2N2tYk3evvRQFZPc6Uz9iJ6ZPR3d+y5eH8N+qfLBN79prc2KwXGZxYvCsmYf0PZgGSJYYw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="js/map.js"></script>
+</head>
+<body>
+    <header>
+        <h1 class="site-title">EcoTraveler</h1>
+        <nav class="navbar">
+          <div class="nav-container">
+            <a href="index.html" class="nav-logo">EcoTraveler</a>
+            <button id="menu-toggle" class="hamburger">&#9776;</button>
+            <ul class="nav-menu" id="nav-menu">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="itinerary.html">Itinerary</a></li>
+              <li><a href="map.html">Map</a></li>
+              <li><a href="accommodations.html">Accommodations</a></li>
+              <li><a href="experiences.html">Experiences</a></li>
+            </ul>
+          </div>
+        </nav>
+      </header>
+      
+
+    <main class="container">
+      <h2>Explore Sustainable Destinations</h2>
+      <div id="map"></div>
+    </main>
+
+    <footer class="site-footer">
+      <p>© 2025 <strong>EcoTraveler</strong>. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="itinerary.html">Itinerary</a>
+        <a href="map.html">Map</a>
+        <a href="accommodations.html">Accommodations</a>
+        <a href="experiences.html">Experiences</a>
+      </div>
+    </footer>
+  
+  
+  
+
+  <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const map = L.map("map").setView([0, 0], 2);
+
+      L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        attribution: '&copy; OpenStreetMap contributors'
+      }).addTo(map);
+
+      fetch("data.json")
+        .then(res => res.json())
+        .then(data => {
+          if (!data.destinations) return;
+
+          data.destinations.forEach(destination => {
+            const { name, latitude, longitude, description, image } = destination;
+            const popupContent = `
+              <strong>${name}</strong><br>
+              ${description}<br>
+              <img src="${image}" alt="${name}" style="width:100px; margin-top:5px;">
+            `;
+            L.marker([latitude, longitude])
+              .addTo(map)
+              .bindPopup(popupContent);
+          });
+        })
+        .catch(err => console.error("Failed to load map data:", err));
+
+      // Hamburger Menu
+      const hamburger = document.getElementById("hamburger");
+      const navMenu = document.getElementById("nav-menu");
+
+      hamburger.addEventListener("click", () => {
+        navMenu.classList.toggle("active");
+        hamburger.classList.toggle("open");
+        const icon = hamburger.querySelector("i");
+        icon.classList.toggle("fa-bars");
+        icon.classList.toggle("fa-times");
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EcoTraveler | Itinerary</title>
+  <link rel="stylesheet" href="itinerary.css" />
+  <style>
+    /* Estilos do menu responsivo */
+    .main-nav {
+      position: relative;
+    }
+
+    .hamburger {
+      font-size: 1.8rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: #1a572c;
+      display: block;
+      margin: 1rem;
+    }
+
+    #navLinks {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      background-color: #d9f2df;
+      padding: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      margin: 0 1rem;
+    }
+
+    #navLinks li {
+      list-style: none;
+      margin: 0.5rem 0;
+    }
+
+    #navLinks a {
+      text-decoration: none;
+      color: #1a572c;
+      font-weight: 600;
+    }
+
+    /* Exibe o menu quando ativo */
+    #navLinks.show {
+      display: flex;
+    }
+
+    /* Estilo para telas maiores */
+    @media (min-width: 768px) {
+      .hamburger {
+        display: none;
+      }
+
+      #navLinks {
+        display: flex !important;
+        flex-direction: row;
+        justify-content: center;
+        gap: 2rem;
+        background: none;
+        box-shadow: none;
+        padding: 0;
+      }
+
+      #navLinks li {
+        margin: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-title">
+      <h1>Smart Itineraries</h1>
+    </div>
+    <nav class="main-nav">
+      <button class="hamburger" onclick="toggleMenu()">☰</button>
+      <ul id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="itinerary.html" class="active">Itinerary</a></li>
+        <li><a href="map.html">Map</a></li>
+        <li><a href="accommodations.html">Accommodations</a></li>
+        <li><a href="experiences.html">Experiences</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="form-section">
+      <label>Destination:
+        <input type="text" id="destination" placeholder="e.g. Bali, Patagonia...">
+      </label>
+      <label>Start Date:
+        <input type="date" id="startDate">
+      </label>
+      <label>End Date:
+        <input type="date" id="endDate">
+      </label>
+      <button onclick="generateItinerary()">Generate Itinerary</button>
+    </section>
+
+    <section id="itineraryResults" class="itinerary-results"></section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 EcoTraveler</p>
+  </footer>
+
+  <!-- Script para ativar o menu -->
+  <script>
+    function toggleMenu() {
+      document.getElementById("navLinks").classList.toggle("show");
+    }
+  </script>
+
+  <script src="itinerary.js"></script>
+</body>
+</html>

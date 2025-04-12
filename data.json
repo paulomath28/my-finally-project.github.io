@@ -1,0 +1,89 @@
+{
+  "destinations": [
+    {
+      "name": "Torres del Paine National Park",
+      "latitude": -51.2429,
+      "longitude": -72.3321,
+      "description": "One of the most impressive natural areas on the planet, with sustainable trails and unique biodiversity.",
+      "image": "assets/images/torres_paine.jpg"
+    },
+    {
+      "name": "Banff National Park",
+      "latitude": 51.4968,
+      "longitude": -115.9281,
+      "description": "A pristine Canadian Rockies destination promoting eco-tourism and preservation of natural landscapes.",
+      "image": "assets/images/banff.jpg"
+    },
+    {
+      "name": "Bali Barat National Park",
+      "latitude": -8.1406,
+      "longitude": 114.5920,
+      "description": "A beautiful conservation area in Indonesia, home to coral reefs, mangroves, and rare wildlife.",
+      "image": "assets/images/bali-barat.png"
+    },
+    {
+      "name": "Fernando de Noronha",
+      "latitude": -3.854,
+      "longitude": -32.4233,
+      "description": "A protected Brazilian archipelago known for its rich marine biodiversity and sustainable tourism practices.",
+      "image": "assets/images/noronha2.jpeg"
+    },
+    {
+      "name": "Plitvice Lakes National Park",
+      "latitude": 44.8806,
+      "longitude": 15.6169,
+      "description": "Croatia’s oldest national park, featuring cascading lakes and eco-conscious tourism management.",
+      "image": "assets/images/plitvice.jpeg"
+    },
+    {
+      "name": "Galápagos Islands",
+      "latitude": -0.9538,
+      "longitude": -90.9656,
+      "description": "A unique archipelago with endemic wildlife and strict sustainable tourism guidelines.",
+      "image": "assets/images/galapagos.webp"
+    }
+  ],
+  "accommodations": [
+    {
+      "name": "EcoLodge Patagonia",
+      "location": "Chile",
+      "image": "assets/images/torres_paine2.jpg",
+      "description": "An eco-luxury retreat nestled in the heart of Patagonia, powered by renewable energy.",
+      "highlight": true
+    },
+    {
+      "name": "Bamboo Eco Resort",
+      "location": "Bali, Indonesia",
+      "image": "assets/images/green_village_bali.jpg",
+      "description": "A sustainable resort built entirely with bamboo, offering immersive jungle experiences.",
+      "highlight": true
+    },
+    {
+      "name": "Solaris Green Stay",
+      "location": "Portugal",
+      "image": "assets/images/hotelNoronha.jpeg",
+      "description": "A modern and eco-friendly stay with solar panels and organic gardens.",
+      "highlight": true
+    }
+  ],
+  "experiences": [
+    {
+      "name": "Amazon Jungle Trek",
+      "location": "Brazil",
+      "image": "assets/images/amazon_trek.jpg",
+      "description": "Embark on a guided jungle trek with local communities, learning about biodiversity, medicinal plants, and rainforest conservation."
+    },
+    {
+      "name": "Kayaking in the Norwegian Fjords",
+      "location": "Norway",
+      "image": "assets/images/norway_kayak.jpg",
+      "description": "Experience the serene beauty of the fjords through eco-kayaking while spotting wildlife and practicing Leave No Trace ethics."
+    },
+    {
+      "name": "Organic Farm Experience in Tuscany",
+      "location": "Italy",
+      "image": "assets/images/tuscany_farm.jpg",
+      "description": "Spend a day on a sustainable organic farm, learning to cook Italian dishes with fresh local ingredients and participate in harvesting."
+    }
+  ]
+}

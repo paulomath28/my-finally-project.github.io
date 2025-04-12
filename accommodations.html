@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EcoTraveler | Accommodations</title>
+  <link rel="stylesheet" href="css/accommodations.css" />
+  
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+          <h1 class="logo">EcoTraveler</h1>
+          <nav class="nav">
+            <button class="hamburger" aria-label="Toggle menu">
+              <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-links">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="itinerary.html">Itinerary</a></li>
+              <li><a href="map.html">Map</a></li>
+              <li><a href="accommodations.html">Accommodations</a></li>
+              <li><a href="experiences.html">Experiences</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+      
+  <main class="container">
+    <section class="intro">
+      <h2>Eco-Friendly Accommodations</h2>
+      <p>Discover sustainable places to stay that align with your values and leave a lighter footprint on the planet.</p>
+    </section>
+
+    <section id="accommodation-list" class="accommodation-grid">
+      <!-- Cards serão inseridos via script.js -->
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; <span id="year"></span> <strong>EcoTraveler</strong>. All rights reserved.</p>
+    <div class="footer-links">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="itinerary.html">Itinerary</a></li>
+        <li><a href="map.html">Map</a></li>
+        <li><a href="accommodations.html">Accommodations</a></li>
+        <li><a href="experiences.html">Experiences</a></li>
+      </ul>
+    </div>
+  </footer>
+  
+
+  <script src="script.js"></script>
+
+  <script>
+    // Toggle do menu
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+  
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+    });
+
+    // Inserir ano atual no rodapé
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
