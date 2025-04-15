@@ -1,4 +1,4 @@
-const apiKey = 'dc0af233151c6eac43d3f32c0f160699'; // Evite deixar isso público em produção!
+const apiKey = 'dc0af233151c6eac43d3f32c0f160699'; 
   const city = 'Rio de Janeiro';
   const units = 'metric';
   const lang = 'en';
@@ -19,6 +19,6 @@ const apiKey = 'dc0af233151c6eac43d3f32c0f160699'; // Evite deixar isso público
       `;
     })
     .catch(error => {
-      console.error("Erro ao buscar clima:", error);
-      document.getElementById("weather").innerHTML = `<p>Não foi possível carregar o clima.</p>`;
+      console.error("Error fetching weather:", error);
+      document.getElementById("weather").innerHTML = `<p>Unable to load weather.</p>`;
     });
