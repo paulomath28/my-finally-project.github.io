@@ -46,7 +46,7 @@ body {
   }
   
 
-  /* Layout responsivo do grid */
+  /* Responsive grid layout */
 .experience-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -56,7 +56,7 @@ body {
   margin: 0 auto;
 }
 
-/* Estilo dos cards */
+/* Card style */
 .experience-card {
   background-color: #fff;
   border: 1px solid #4caf50;
@@ -91,7 +91,7 @@ body {
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
-/* Responsividade extra para o select */
+/* Extra responsiveness for select */
 #experience-filter {
   display: block;
   margin: 0 auto 20px;
