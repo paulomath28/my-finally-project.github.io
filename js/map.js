@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
   
 
-// Inicializa o mapa
+// Initialize the map
 const map = L.map('map').setView([-15.77972, -47.92972], 3);
 
 // Mapa base
@@ -16,10 +16,10 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
   attribution: '&copy; OpenStreetMap contributors'
 }).addTo(map);
 
-// Itinerários com múltiplos destinos
+// Multi-destination itineraries
 const exampleItineraries = ["Bali", "Patagonia", "Amsterdam", "Costa Rica", "Kyoto", "Lisbon", "Banff", "Cape Town", "Queenstown", "Reykjavik"];
 
-// Adiciona marcadores de todos os destinos de todos os itinerários
+// Add markers for all destinations on all itineraries
 exampleItineraries.forEach(itinerary => {
   itinerary.destinations.forEach(destination => {
     const marker = L.marker([destination.latitude, destination.longitude]).addTo(map);
