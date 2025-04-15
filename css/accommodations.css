@@ -98,7 +98,7 @@ body {
   }
 
   .site-footer {
-    background-color: #2e5d46; /* ou a cor que você estiver usando */
+    background-color: #2e5d46; 
     color: #fff;
     text-align: center;
     padding: 2rem 1rem;
@@ -128,9 +128,6 @@ body {
     color: #a1e887;
   }
   
-  
-  
-  /* Responsivo */
   @media (max-width: 768px) {
     .nav-links {
       display: none;
